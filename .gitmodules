@@ -1,0 +1,18 @@
+[submodule "repos/github.com/Shougo/dein.vim"]
+	path = repos/github.com/Shougo/dein.vim
+	url = https://github.com/Shougo/dein.vim
+[submodule "repos/github.com/itchyny/lightline.vim"]
+	path = repos/github.com/itchyny/lightline.vim
+	url = https://github.com/itchyny/lightline.vim
+[submodule "repos/github.com/Shougo/deoplete.nvim"]
+	path = repos/github.com/Shougo/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "repos/github.com/junegunn/fzf.vim"]
+	path = repos/github.com/junegunn/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "repos/github.com/scrooloose/nerdtree"]
+	path = repos/github.com/scrooloose/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "repos/github.com/wsdjeg/dein-ui.vim"]
+	path = repos/github.com/wsdjeg/dein-ui.vim
+	url = https://github.com/wsdjeg/dein-ui.vim
