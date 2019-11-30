@@ -1,22 +1,29 @@
-dist: xenial
-
-language: python
-
-python:
-  - 3.6
-  - 3.7
+language: generic
 
 install:
-  - eval "$(curl -Ss https://raw.githubusercontent.com/neovim/bot-ci/master/scripts/travis-setup.sh) nightly-x64"
-  - make install
+  - git clone --depth=1 https://github.com/thinca/vim-themis /tmp/themis
+  - (if ! test -d $HOME/vim-$VIM_VERSION/bin; then
+       git clone https://github.com/vim/vim $HOME/vim &&
+       cd $HOME/vim &&
+       git checkout v$VIM_VERSION &&
+       ./configure --prefix=$HOME/vim-$VIM_VERSION &&
+       make &&
+       make install;
+     fi)
+
+cache:
+  directories:
+    - $HOME/vim-$VIM_VERSION
 
 env:
-  global:
-    - PATH=$HOME/neovim/bin:$PATH
-    - PYTEST_ADDOPTS=--cov rplugin/python3/deoplete
+  - VIM_VERSION=8.1.1775
+  - VIM_VERSION=8.1.1700
+  - VIM_VERSION=8.1.0000
+  - VIM_VERSION=8.0.0000
+  - VIM_VERSION=7.4
+  - VIM_VERSION=7.3
 
 script:
-  - make --keep-going test lint
-  - coverage report -m --skip-covered
-  - coverage xml
-  - bash <(curl -s https://codecov.io/bash) -X gcov -X coveragepy -X fix -X search -X xcode -f coverage.xml
+  - export PATH=$HOME/vim-$VIM_VERSION/bin:$PATH
+  - vim --version
+  - /tmp/themis/bin/themis --reporter spec

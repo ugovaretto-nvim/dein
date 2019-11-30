@@ -1,1 +1,5 @@
-doc/tags
+__pycache__
+
+# demo
+/plugin/hello.vim
+/pythonx/hello.py
