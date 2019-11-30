@@ -16,3 +16,6 @@
 [submodule "repos/github.com/wsdjeg/dein-ui.vim"]
 	path = repos/github.com/wsdjeg/dein-ui.vim
 	url = https://github.com/wsdjeg/dein-ui.vim
+[submodule "repos/github.com/davidhalter/jedi-vim"]
+	path = repos/github.com/davidhalter/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
